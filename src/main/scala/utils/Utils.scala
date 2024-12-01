@@ -1,5 +1,6 @@
 package utils
 
-def readFileLines(path: String): List[String] =
+def readFileLines(path: String): Array[String] =
   val source = io.Source.fromFile(path)
-  try source.getLines().toList finally source.close()
+  try source.getLines().toArray finally source.close()
+  
