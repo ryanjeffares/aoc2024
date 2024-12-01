@@ -10,9 +10,7 @@ object Main {
     }
 
     val dayNumber = args(0).toInt - 1
-
-    val days = ArrayBuffer.empty[Day]
-    days.append(new Day1)
+    val days = new Day1("src/main/resources/day1.txt") :: Nil
 
     if (dayNumber >= days.length) {
       println("Given day has not been implemented yet")
