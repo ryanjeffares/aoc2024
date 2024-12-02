@@ -17,7 +17,7 @@ class Day1(inputPath: String) extends Day {
       val (left, right) = getTables(source)
       (left, right.groupMapReduce(identity)(_ => 1)(_ + _))
     }.get
-    
+
     println(left.fold(0)((sum, n) => sum + n * right.getOrElse(n, 0)))
 
   private def getTables(source: Source): (Seq[Int], Seq[Int]) =
