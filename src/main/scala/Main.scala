@@ -1,7 +1,5 @@
 import days.*
 
-import scala.collection.mutable.ArrayBuffer
-
 object Main {
   def main(args: Array[String]): Unit =
     if (args.isEmpty) {
@@ -10,7 +8,9 @@ object Main {
     }
 
     val dayNumber = args(0).toInt - 1
-    val days = new Day1("src/main/resources/day1.txt") :: Nil
+    val days = new Day1("src/main/resources/day1.txt")
+      :: new Day2("src/main/resources/day2.txt")
+      :: Nil
 
     if (dayNumber >= days.length) {
       println("Given day has not been implemented yet")
