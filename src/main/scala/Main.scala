@@ -12,6 +12,7 @@ object Main {
       :: new Day2("src/main/resources/day2.txt")
       :: new Day3("src/main/resources/day3.txt")
       :: new Day4("src/main/resources/day4.txt")
+      :: new Day5
       :: Nil
 
     if (dayNumber >= days.length) {
