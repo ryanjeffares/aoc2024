@@ -3,11 +3,11 @@ package days
 import scala.io.Source
 import scala.util.Using
 
-class Day5 extends Day {
+class Day5(rulesPath: String, updatesPath: String) extends Day {
   override def part1(): Unit =
     val rules = getRules
 
-    println(Using(Source.fromFile("src/main/resources/day5_updates.txt")) { source =>
+    println(Using(Source.fromFile(updatesPath)) { source =>
       source.getLines()
         .map(_.split(',').map(_.toInt))
         .filter(update => isOrdered(update, rules))
@@ -17,8 +17,8 @@ class Day5 extends Day {
 
   override def part2(): Unit =
     val rules = getRules
-    
-    println(Using(Source.fromFile("src/main/resources/day5_updates.txt")) { source =>
+
+    println(Using(Source.fromFile(updatesPath)) { source =>
       source.getLines()
         .map(_.split(',').map(_.toInt))
         .filter(update => !isOrdered(update, rules))
@@ -42,7 +42,7 @@ class Day5 extends Day {
     }.get)
 
   private def getRules: Map[Int, Set[Int]] =
-    Using(Source.fromFile("src/main/resources/day5_rules.txt")) { source =>
+    Using(Source.fromFile(rulesPath)) { source =>
       source.getLines()
         .map(_.split('|').map(_.toInt))
         .toArray
@@ -54,7 +54,7 @@ class Day5 extends Day {
       update.indices.drop(i + 1).forall { j =>
         rules.get(update(j)) match {
           case Some(s) => !s.contains(update(i))
-          case None => false
+          case None => true
         }
       }
     }

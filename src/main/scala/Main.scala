@@ -8,11 +8,13 @@ object Main {
     }
 
     val dayNumber = args(0).toInt - 1
-    val days = new Day1("src/main/resources/day1.txt")
-      :: new Day2("src/main/resources/day2.txt")
-      :: new Day3("src/main/resources/day3.txt")
-      :: new Day4("src/main/resources/day4.txt")
-      :: new Day5
+    val days = Day1("src/main/resources/day1.txt")
+      :: Day2("src/main/resources/day2.txt")
+      :: Day3("src/main/resources/day3.txt")
+      :: Day4("src/main/resources/day4.txt")
+      :: Day5("src/main/resources/day5_rules.txt", "src/main/resources/day5_updates.txt")
+      :: Day6("src/main/resources/day6.txt")
+      :: Day7("src/main/resources/day7.txt")
       :: Nil
 
     if (dayNumber >= days.length) {
