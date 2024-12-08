@@ -15,6 +15,7 @@ object Main {
       :: Day5("src/main/resources/day5_rules.txt", "src/main/resources/day5_updates.txt")
       :: Day6("src/main/resources/day6.txt")
       :: Day7("src/main/resources/day7.txt")
+      :: Day8("src/main/resources/day8.txt")
       :: Nil
 
     if (dayNumber >= days.length) {
