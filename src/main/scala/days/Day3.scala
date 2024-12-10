@@ -6,7 +6,7 @@ import scala.util.matching.Regex
 
 class Day3(inputPath: String) extends Day {
   override def part1(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       "mul[(][0-9]+,[0-9]+[)]".r
         .findAllIn(source.getLines.mkString)
         .map("[0-9]+".r.findAllIn(_).map(_.toInt).product)
@@ -14,7 +14,7 @@ class Day3(inputPath: String) extends Day {
     }.get)
 
   override def part2(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       val text = source.getLines.mkString
       val instructionPattern = "mul[(][0-9]+,[0-9]+[)]".r
       val matches = "do[(][)]|don't[(][)]".r.findAllMatchIn(text)

@@ -9,10 +9,10 @@ class Day7(inputPath: String) extends Day {
   }
 
   override def part1(): Unit =
-    println(solve(Array(Op.Add, Op.Multiply)))
+    utils.time(() =>solve(Array(Op.Add, Op.Multiply)))
 
   override def part2(): Unit =
-    println(solve(Array(Op.Add, Op.Multiply, Op.Concat)))
+    utils.time(() =>solve(Array(Op.Add, Op.Multiply, Op.Concat)))
 
   private def solve(ops: Array[Op]): Long =
     Using(Source.fromFile(inputPath)) { source =>

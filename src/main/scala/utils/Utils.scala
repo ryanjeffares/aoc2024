@@ -1,6 +1,7 @@
 package utils
 
-def readFileLines(path: String): Array[String] =
-  val source = io.Source.fromFile(path)
-  try source.getLines().toArray finally source.close()
-  
+def time[A](f: () => A): Unit =
+  val t1 = System.nanoTime
+  val answer = f()
+  val t2 = System.nanoTime
+  println("Found answer " + answer + " in " + (t2 - t1) / 1e6d + " ms")

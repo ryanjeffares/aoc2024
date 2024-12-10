@@ -9,7 +9,7 @@ class Day6(inputPath: String) extends Day {
   }
 
   override def part1(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       val map = source.getLines().map(_.toCharArray).toArray
       val height = map.length
       val width = map(0).length

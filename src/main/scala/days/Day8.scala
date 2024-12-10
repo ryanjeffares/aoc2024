@@ -9,7 +9,7 @@ class Day8(inputPath: String) extends Day {
   override def part1(): Unit =
     val (points, width, height) = getInput
 
-    println(points.map { (char, points) =>
+    utils.time(() => points.map { (char, points) =>
       points.indices.iterator.flatMap { i =>
         points.indices.iterator.drop(i + 1).flatMap { j =>
           findAntinodes(points, i, j, width, height, false)
@@ -20,7 +20,7 @@ class Day8(inputPath: String) extends Day {
   override def part2(): Unit =
     val (points, width, height) = getInput
 
-    println(points.map { (char, points) =>
+    utils.time(() => points.map { (char, points) =>
       points.indices.iterator.flatMap { i =>
         points.indices.iterator.drop(i + 1).flatMap { j =>
           findAntinodes(points, i, j, width, height, true)

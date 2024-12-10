@@ -6,7 +6,7 @@ import scala.util.Using
 
 class Day4(inputPath: String) extends Day {
   override def part1(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       val graph = source.getLines.map(_.toCharArray).toArray
       (for {
         i <- graph.indices
@@ -16,7 +16,7 @@ class Day4(inputPath: String) extends Day {
     }.get)
 
   override def part2(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       val graph = source.getLines.map(_.toCharArray).toArray
       (for {
         i <- graph.indices

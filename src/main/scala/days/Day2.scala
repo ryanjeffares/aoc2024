@@ -5,12 +5,12 @@ import scala.util.Using
 
 class Day2(inputPath: String) extends Day {
   override def part1(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       source.getLines().iterator.count(line => reportIsSafe(line.split(' ').map(_.toInt)))
     }.get)
 
   override def part2(): Unit =
-    println(Using(Source.fromFile(inputPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(inputPath)) { source =>
       source.getLines().iterator.count { line =>
         val nums = line.split(' ').map(_.toInt)
         reportIsSafe(nums) || nums.indices.iterator.exists { i =>

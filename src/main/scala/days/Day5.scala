@@ -7,7 +7,7 @@ class Day5(rulesPath: String, updatesPath: String) extends Day {
   override def part1(): Unit =
     val rules = getRules
 
-    println(Using(Source.fromFile(updatesPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(updatesPath)) { source =>
       source.getLines()
         .map(_.split(',').map(_.toInt))
         .filter(update => isOrdered(update, rules))
@@ -18,7 +18,7 @@ class Day5(rulesPath: String, updatesPath: String) extends Day {
   override def part2(): Unit =
     val rules = getRules
 
-    println(Using(Source.fromFile(updatesPath)) { source =>
+    utils.time(() =>Using(Source.fromFile(updatesPath)) { source =>
       source.getLines()
         .map(_.split(',').map(_.toInt))
         .filter(update => !isOrdered(update, rules))
