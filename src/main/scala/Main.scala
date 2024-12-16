@@ -18,6 +18,10 @@ object Main {
       :: Day8("src/main/resources/day8.txt")
       :: Day9("src/main/resources/day9.txt")
       :: Day10("src/main/resources/day10.txt")
+      :: null
+      :: null
+      :: null
+      :: Day14("src/main/resources/day14.txt")
       :: Nil
 
     if (dayNumber >= days.length) {
@@ -25,9 +29,6 @@ object Main {
       return
     }
 
-    for (i <- days.indices) {
-      println("Day " + (i + 1))
-      days(i).part1()
-      days(i).part2()
-    }
+    days(dayNumber).part1()
+    days(dayNumber).part2()
 }
