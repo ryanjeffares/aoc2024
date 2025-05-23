@@ -15,11 +15,7 @@ class Day6(inputPath: String) extends Day {
       val width = map(0).length
 
       var direction = Direction.Up
-      var (x, y) = map.zipWithIndex.flatMap { (row, y) =>
-        map(y).zipWithIndex.collectFirst {
-          case (char, x) if char == '^' => (x, y)
-        }
-      }.head
+      var (x, y) = utils.findElementInMap(map, '^')
 
       var guardHasLeft = false
       while (!guardHasLeft) {

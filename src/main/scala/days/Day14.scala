@@ -34,9 +34,5 @@ class Day14(inputPath: String) extends Day {
           ((x, y), (velX, velY))
         }
         .toArray
-
-      for i <- 0 until 100 {
-        
-      }
     }
 }

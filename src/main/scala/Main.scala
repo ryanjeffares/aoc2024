@@ -22,6 +22,8 @@ object Main {
       :: null
       :: null
       :: Day14("src/main/resources/day14.txt")
+      :: null
+      :: Day16("src/main/resources/day16.txt")
       :: Nil
 
     if (dayNumber >= days.length) {
